@@ -6,11 +6,33 @@ require 'bd/bd.php';
 <html>
 <head>
 	<title>Aula</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/princ.css">
 </head>
 <body>
-
-	<a href="register/"><button>Registrar-se</button></a><br><br>
-	<a href="login/"><button>Logar-se</button></a>
+	<div id="menu">
+		<ul>
+			<a>
+				<li>
+					Inicio
+				</li>
+			</a>
+			<a>
+				<li>
+					Fórum
+				</li>
+			</a>
+			<a href="register/">
+				<li>
+					Registrar-se
+				</li>
+			</a>
+			<a href="login/">
+				<li>
+					Logar-se
+				</li>
+			</a>
+		</ul>
+	</div>
 
 </body>
 </html>

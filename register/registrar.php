@@ -10,7 +10,7 @@ if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
 		$email = addslashes($_POST['email']);
 		$senha = addslashes(MD5($_POST['senha']));
 
-		$verificar = "SELECT * FROM registros WHERE Nome = :nome and Email = :email and Senha = :senha";
+		$verificar = "SELECT * FROM registros WHERE Nome = :nome";
 		$verificar = $pdo->prepare($verificar);
 		$verificar->bindValue(':nome', $nome);
 		$verificar->bindValue(':email', $email);
@@ -30,6 +30,10 @@ if(isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
 			$_SESSION['email'] = $email;
 			$_SESSION['logado'] = 1;
 			header('Location: ../painel');
+			exit;
+		} else {
+			$_SESSION['jaexi'] = 1;
+			header('Location: ../register');
 			exit;
 		}
 
